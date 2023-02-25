@@ -1,0 +1,38 @@
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px !important;
+}
+
+.text {
+  color: white;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+body {
+  background-color: blue
+}
+
+div {
+  text-align: center;
+}
+
+button {
+  font-size: 2.5em;
+  margin-top: 30px;
+  margin-bottom: 20px !important;
+  background-color: white;
+  border-color: black;
+  color: black;
+}
+
+
+
+.wrap {
+  display: flex;
+  flex-flow: column;
+  height: 100px;
+  margin: 0 0 1em;
+}
