@@ -33,11 +33,7 @@ class RequestController extends Controller
         
 
         Log::debug( "コントローラーに処理がきたよ");
-        return "ちんちん";
+       
     }
 
-    public function input(Request $request) {
-        Log::debug( "inputにこい");
-        return view("input" , []);
-    }
 }
