@@ -77,55 +77,28 @@ function addOption() {
     sex =select.value
 
     var select = document.getElementById("Resident");
-    resident = select.value
+    residence = select.value
 
     var select = document.getElementById("maregge");
-   maregge = select.value
+    is_marrige = select.value
 
     var select = document.getElementById("nennsyuu");
-    nnennsyuu = select.value
+    annual_income = select.value
 
     var select = document.getElementById("sisann");
-    sisann = select.value
+    assets = select.value
 
     var select = document.getElementById("sonota");
-    sonota = select.value
+    etc_income = select.value
     var select = document.getElementById("fusai");
-    fusai = select.value
-
-
-
-// alert(
-
-//     "この人の年齢は：" + age + "歳です" + "\n"
-//     + "この人の性別は："+sex+"です" + "\n"
-//     + "この人は："+resident+"在住です" + "\n"
-//     + "この人は結婚歴："+maregge+"です" + "\n"
-//     + "この人の年収は："+nnennsyuu+"です" + "\n"
-//     + "この人の資産は："+sisann+"です" + "\n"
-//     + "この人のその他資産は："+sonota+"です" + "\n"
-//     + "この人の負債は："+fusai+"です" + "\n"
-    
-// )
-let param = {
-    'id' : 200,
-    'age' : age,
-    'sex' : sex,
-    'residence' : resident,
-    'is_marrige' : maregge,
-    'annual_income' : nnennsyuu,
-    'assets' : sisann,
-    'etc_income' : sonota,
-    'debt' : fusai,
-  };
-
-  console.log(param)
+    debt = select.value
 
 var xhr = new XMLHttpRequest();
 
 xhr.open('post','http://127.0.0.1:8000/api/test');
-xhr.setRequestHeader('content-type', 'application/josn;charset=UTF-8');
-xhr.send( JSON.stringify(param) );
+xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+xhr.send( 'age=' + age + '&' + 'sex=' + sex + '&' + 'residence=' + residence + '&' + 'is_marrige=' + is_marrige + '&' + 'annual_income=' + annual_income + '&' + 'assets=' + assets + '&' + 'etc_income=' + etc_income +'&' +'debt=' + debt);
+
 
 xhr.onreadystatechange = function() {
     if(xhr.readyState === 4 && xhr.status === 200) {
