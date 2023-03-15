@@ -52,7 +52,7 @@ const residents = [
 
 window.onload = function(){
     // selectタグを取得する
-    var select = document.getElementById("Resident");
+    var select = document.getElementById("resident");
     console.log(select)
     for (let i = 0; i < residents.length; i++) {
         console.log("i = " + residents[i]);
@@ -76,35 +76,56 @@ function addOption() {
     var select = document.getElementById("sex");
     sex =select.value
 
-    var select = document.getElementById("Resident");
+    var select = document.getElementById("resident");
     residence = select.value
 
-    var select = document.getElementById("maregge");
-    is_marrige = select.value
+    var select = document.getElementById("marriage");
+    is_marriage = select.value
 
-    var select = document.getElementById("nennsyuu");
+    var select = document.getElementById("annual_income");
     annual_income = select.value
 
-    var select = document.getElementById("sisann");
+    var select = document.getElementById("assets");
     assets = select.value
 
-    var select = document.getElementById("sonota");
-    etc_income = select.value
-    var select = document.getElementById("fusai");
+    // var select = document.getElementById("etc_income");
+    // etc_income = select.value
+
+    var select = document.getElementById("debt");
     debt = select.value
 
-var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
 
-xhr.open('post','http://127.0.0.1:8000/api/test');
-xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
-xhr.send( 'age=' + age + '&' + 'sex=' + sex + '&' + 'residence=' + residence + '&' + 'is_marrige=' + is_marrige + '&' + 'annual_income=' + annual_income + '&' + 'assets=' + assets + '&' + 'etc_income=' + etc_income +'&' +'debt=' + debt);
+    xhr.open('post','http://127.0.0.1:8000/api/test');
+    xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
+    xhr.send( 
+              'age=' + age + 
+              '&' + 'sex=' + sex + 
+              '&' + 'residence=' + residence + 
+              '&' + 'is_marriage=' + is_marriage + 
+              '&' + 'annual_income=' + annual_income + 
+              '&' + 'assets=' + assets + 
+            //   '&' + 'etc_income=' + etc_income + 
+              '&' +'debt=' + debt
+    );
 
-
-xhr.onreadystatechange = function() {
-    if(xhr.readyState === 4 && xhr.status === 200) {
-        console.log(xhr.responseText)
+    xhr.onreadystatechange = function(){
+        if (xhr.readyState == 4){
+          if (xhr.status == 200){
+            let data = xhr.responseText;
+            console.log(JSON.parse(data));
+          }
+        }
     }
-}
+
+    // location.href = 'http://127.0.0.1:8000/result?age=' + encodeURIComponent(age)
+    //                 + "&annual_income=" + encodeURIComponent(annual_income)
+    //                 + "&assets=" + encodeURIComponent(assets)
+    //                 + "&etc_income=" + encodeURIComponent(etc_income)
+    //                 + "&debt=" + encodeURIComponent(debt);
+
+
+
 
 }
 
