@@ -59,7 +59,7 @@ class ListMetaApi
             // 'year' => $year,
             'age'  => $generation,
         ];
-        Log::debug($result);
+        // Log::debug($result);
         return $result["age"];
     }
 
@@ -70,7 +70,7 @@ class ListMetaApi
 	*/
     private static function getIndex($age) {
         $index = 0;
-        Log::debug($age);
+        // Log::debug($age);
         switch ((int)$age) {
             // 29歳以下
             case $age < 30:

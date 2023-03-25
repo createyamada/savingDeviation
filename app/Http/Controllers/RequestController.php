@@ -18,7 +18,7 @@ class RequestController extends Controller
 	* @param  Request request
 	* @return $res
 	*/
-    public function show(Request $request)
+    public function calc(Request $request)
     {
 
         Log::debug($request);
@@ -37,20 +37,15 @@ class RequestController extends Controller
 
 
 
-        // // 統計表データを取得するAPI
-        // $list_code = ListApi::getList();
+        // 統計表データを取得するAPI
+        $list_code = ListApi::getList();
 
-        // // 統計表メタ情報を取得するAPI
-        // $age_code = ListMetaApi::getListMeta($list_code , $request->age);
+        // 統計表メタ情報を取得するAPI
+        $age_code = ListMetaApi::getListMeta($list_code , $request->age);
 
-        // // // 統計データを取得するAPI
-        // $data = DataApi::getData($list_code , $age_code , $request);
-        // Log::debug($data);
-        // return $data;
-        return view('result');
-        
+        // // 統計データを取得するAPI
+        $results = DataApi::getData($list_code , $age_code , $request);
+        Log::debug($results);
+        return $results;        
     }
-
-
-
 }

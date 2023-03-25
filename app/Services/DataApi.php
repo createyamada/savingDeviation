@@ -21,7 +21,8 @@ class DataApi
 
         // 日付範囲を取得
         $date = Common::dateToFrom("data");
-
+        Log::debug('input');
+        Log::debug($input);
         Log::debug("age_code");
         Log::debug($age_code);
         // 統計データ取得パラメータ
@@ -35,6 +36,8 @@ class DataApi
             'cdCat05'           => $age_code,
         );
 
+        Log::debug($params);
+
         // メモリ上限引き上げ
         ini_set("memory_limit", "200000M");
 
@@ -46,6 +49,9 @@ class DataApi
         $res = Http::get($url);
 
         $array = $res->json();
+        Log::debug($array);
+
+
 
         $labels = $array["GET_STATS_DATA"]["STATISTICAL_DATA"]["CLASS_INF"]["CLASS_OBJ"][4]["CLASS"];
         $datas = $array["GET_STATS_DATA"]["STATISTICAL_DATA"]["DATA_INF"]["VALUE"];
@@ -58,6 +64,7 @@ class DataApi
             foreach( $datas as $data ) {
 
                 if($code === $data["@cat04"]) {
+                    // Log::debug($data);
                     array_push(
                         $result,
                         [

@@ -1,38 +1,29 @@
 h1 {
   font-size: 3em;
-  margin-bottom: 30px !important;
+  margin: 30px !important;
 }
 
 .text {
-  color: white;
+  /* color: white; */
   text-align: center;
   justify-content: center;
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-body {
-  background-color: blue
-}
-
 div {
   text-align: center;
 }
 
-button {
-  font-size: 2.5em;
-  margin-top: 30px;
-  margin-bottom: 20px !important;
-  background-color: white;
-  border-color: black;
-  color: black;
-}
-
-
-
-.wrap {
-  display: flex;
+div.wrap {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  width: 500px;
+  position: relative;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  vertical-align: center;
   flex-flow: column;
   height: 100px;
-  margin: 0 0 1em;
 }
