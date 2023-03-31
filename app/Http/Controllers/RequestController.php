@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Http;
 use App\Services\ListApi;
 use App\Services\ListMetaApi;
 use App\Services\DataApi;
+use App\Services\CalcDev;
 use App\Consts\Consts;
 use Log;
 
@@ -21,7 +22,7 @@ class RequestController extends Controller
     public function calc(Request $request)
     {
 
-        Log::debug($request);
+        // Log::debug($request);
 
         // // // 入力データをデータベースに登録
         // // DB::table('savings')->insert([
@@ -45,7 +46,20 @@ class RequestController extends Controller
 
         // // 統計データを取得するAPI
         $results = DataApi::getData($list_code , $age_code , $request);
-        Log::debug($results);
+        // debug($results);
+
+        // 偏差値を計算するメソッド
+        $deviation = CalcDev::calc($request->age , $request->assets , $results);
+        Log::debug("これが偏差値だ");
+        Log::debug($deviation);
+        array_push($results,
+                    [
+                        "name"  => '偏差値',
+                        "value" => $deviation,
+                    ]
+        );
+
+
         return $results;        
     }
 }

@@ -74,14 +74,21 @@ window.onload = function(){
 */
 function addOption() {
     // 年齢を取得する
-    var select = document.getElementById("age");
-    age = select.value
+    var age = document.getElementById("age");
+    age = age.value
+
+    if (age === "" ) {
+        alert("年齢は必ず入力してください");
+        return null;
+    }
 
     var sex = document.getElementById("sex");
     sex = sex.value
 
-    var resident = document.getElementById("resident");
-    residence = resident.value
+    var select = document.getElementById("resident");
+	// 値(数値)から値(value値)を取得
+	const resident = select.options[select.selectedIndex].value;
+ 
 
     var is_marriage = document.getElementById("is_marriage");
     is_marriage = is_marriage.value

@@ -1,0 +1,20 @@
+.card { 
+    margin: 50px;
+    border: 2px solid;
+}
+
+.title {
+    text-align: start!important;
+    margin-top: 0!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding: 1rem 2rem;
+    color: #fff;
+    background: black;
+    -webkit-box-shadow: 5px 5px 0 gray;
+    box-shadow: 5px 5px 0 gray;
+}
+
+.result-div {
+    text-align: center;
+}

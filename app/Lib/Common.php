@@ -29,4 +29,18 @@ class Common
         return $pre_year . '-' . $now;
     }
 
+
+    /**
+	* 千円単位を万円単位に変換する
+	* @param String $value 
+	* @return String $result 
+	*/
+    public static function valueFormat($value) {
+
+
+        $value = preg_replace("/[^0-9]/", "", $value);
+        return round($value / 10);
+    }
+
+
 }
