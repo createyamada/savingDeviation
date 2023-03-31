@@ -77,8 +77,21 @@ function addOption() {
     var age = document.getElementById("age");
     age = age.value
 
+    var assets = document.getElementById("assets");
+    assets = assets.value
+
+    if (age === "" && assets ==="") {
+        alert("年齢は必ず入力してください\n資産は必ず入力してください");
+        return null;
+    }
+
     if (age === "" ) {
         alert("年齢は必ず入力してください");
+        return null;
+    }
+
+    if (assets === "" ) {
+        alert("資産は必ず入力してください");
         return null;
     }
 
@@ -96,8 +109,7 @@ function addOption() {
     var annual_income = document.getElementById("annual_income");
     annual_income = annual_income.value
 
-    var assets = document.getElementById("assets");
-    assets = assets.value
+
 
     // var select = document.getElementById("etc_income");
     // etc_income = select.value

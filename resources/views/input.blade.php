@@ -20,7 +20,7 @@
 
     <div class="wrap">
         <div class="text-div">
-            <label for="age">年齢</label>
+            <label for="age">年齢※</label>
             <input id="age" name="age" type="text" class="cool"/>
         </div>
 
@@ -64,7 +64,7 @@
         </div>
 
         <div class="text-div">
-            <label for="assets">資産</label>
+            <label for="assets">資産※</label>
             <input id="assets" name="assets" type="text" class="cool"/>
             万円
         </div>
