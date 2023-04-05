@@ -27,3 +27,19 @@ div.wrap {
   flex-flow: column;
   height: 100px;
 }
+
+#start-button {
+  /* 水平・垂直方向の中央揃え */
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#estat-credit {
+    /* 水平・垂直方向の中央揃え */
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 

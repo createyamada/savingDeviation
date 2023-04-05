@@ -16,11 +16,13 @@
     <div>
         <h1 class="text">貯金平均算出システム</h1>
         <h4 class="text">あなたの入力した情報から平均値を算出するシステムです。</h4>
-        <h4 class="text">どのくらいみんなどのくらい貯金しているか</h4>
-        <h4 class="text">どのくらい借金しているのか知りたい方ボタンをクリック</h4> 
-       
+    </div>
+
+    <div id="start-button">
         <a href="javascript:calc_start();" class="btn btn--yellow btn--cubic">入力画面へ</a>
     </div>
+
+    <h5 id="estat-credit" class="text">このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。</h5> 
 
     <script src="js/top.js"></script>
 </body>
