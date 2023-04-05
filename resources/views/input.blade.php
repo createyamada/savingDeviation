@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="saveDev icon" href="{{ asset('/favicon.ico') }}">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/component/textBox.css">
     <link rel="stylesheet" href="css/component/selectBox.css">
@@ -20,7 +21,7 @@
 
     <div class="wrap">
         <div class="text-div">
-            <label for="age">年齢※</label>
+            <label for="age">※年齢</label>
             <input id="age" name="age" type="text" class="cool"/>
         </div>
 
@@ -64,7 +65,7 @@
         </div>
 
         <div class="text-div">
-            <label for="assets">資産※</label>
+            <label for="assets">※資産</label>
             <input id="assets" name="assets" type="text" class="cool"/>
             万円
         </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="saveDev icon" href="{{ asset('/favicon.ico') }}">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/component/button.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -13,9 +14,13 @@
 </head>
 
 <body>
-    <div>
+    <!-- <div>
         <h1 class="text">貯金平均算出システム</h1>
         <h4 class="text">あなたの入力した情報から平均値を算出するシステムです。</h4>
+    </div> -->
+
+    <div id="titleImg">
+        <img src="{{ asset('/image/title.png') }}" alt="貯金偏差値" title="貯金偏差値">
     </div>
 
     <div id="start-button">
