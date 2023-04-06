@@ -51,7 +51,7 @@ const residents = [
 ]
 
 // 画面読み込み時に
-window.onload = function(){
+window.onload = function () {
     // selectタグを取得する
     var select = document.getElementById("resident");
     console.log(select)
@@ -73,43 +73,30 @@ window.onload = function(){
 * @param  null
 */
 function addOption() {
-    // 年齢を取得する
+
+    // 値を取得する
+
     var age = document.getElementById("age");
     age = age.value
 
     var assets = document.getElementById("assets");
     assets = assets.value
 
-    if (age === "" && assets ==="") {
-        alert("年齢は必ず入力してください\n資産は必ず入力してください");
-        return null;
-    }
-
-    if (age === "" ) {
-        alert("年齢は必ず入力してください");
-        return null;
-    }
-
-    if (assets === "" ) {
-        alert("資産は必ず入力してください");
-        return null;
-    }
-
     var sex = document.getElementById("sex");
     sex = sex.value
 
     var select = document.getElementById("resident");
-	// 値(数値)から値(value値)を取得
-	const resident = select.options[select.selectedIndex].value;
- 
+    // 値(数値)から値(value値)を取得
+    const resident = select.options[select.selectedIndex].value;
+
 
     var is_marriage = document.getElementById("is_marriage");
     is_marriage = is_marriage.value
 
+
+
     var annual_income = document.getElementById("annual_income");
     annual_income = annual_income.value
-
-
 
     // var select = document.getElementById("etc_income");
     // etc_income = select.value
@@ -117,14 +104,50 @@ function addOption() {
     var debt = document.getElementById("debt");
     debt = debt.value
 
+    // 値のヴァリデーション
+    if (age === "" && assets === "") {
+        alert("年齢は必ず入力してください\n資産は必ず入力してください");
+        return null;
+    }
+
+    if (age === "") {
+        alert("年齢は必ず入力してください");
+        return null;
+    }
+
+    if (assets === "") {
+        alert("資産は必ず入力してください");
+        return null;
+    }
+
+
+    // 未選択時の初期値入力
+
+    if (sex === "") {
+        sex = "0"
+    }
+
+    if (is_marriage === "") {
+        is_marriage = "0"
+    }
+
+    if (annual_income === "") {
+        annual_income = "0"
+    }
+
+    if (debt === "") {
+        debt = "0"
+    }
+
+
     location.href = 'http://127.0.0.1:8000/result?age=' + encodeURIComponent(age)
-                    + "&sex=" + encodeURIComponent(sex)
-                    + "&resident=" + encodeURIComponent(resident)
-                    + "&is_marriage=" + encodeURIComponent(is_marriage)
-                    + "&annual_income=" + encodeURIComponent(annual_income)
-                    + "&assets=" + encodeURIComponent(assets)
-                    // + "&etc_income=" + encodeURIComponent(etc_income)
-                    + "&debt=" + encodeURIComponent(debt);
+        + "&sex=" + encodeURIComponent(sex)
+        + "&resident=" + encodeURIComponent(resident)
+        + "&is_marriage=" + encodeURIComponent(is_marriage)
+        + "&annual_income=" + encodeURIComponent(annual_income)
+        + "&assets=" + encodeURIComponent(assets)
+        // + "&etc_income=" + encodeURIComponent(etc_income)
+        + "&debt=" + encodeURIComponent(debt);
 
 }
 

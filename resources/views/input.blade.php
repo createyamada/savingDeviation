@@ -17,7 +17,9 @@
 
 <body>
 
-<h1 class="text">貯金平均算出システム</h1>
+<div id="titleImg">
+        <img src="{{ asset('/image/title.png') }}" alt="貯金偏差値" title="貯金偏差値">
+</div>
 
     <div class="wrap">
         <div class="text-div">

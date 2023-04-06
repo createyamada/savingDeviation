@@ -47,5 +47,32 @@ div.wrap {
 #titleImg img{
   text-align: center;
   width: 50%;
+}
 
+@media screen and (max-width: 480px) {
+  #titleImg img{
+    text-align: center;
+    width: 90%;
+  }
+  
+  #start-button {
+    /* 水平・垂直方向の中央揃え */
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10px;
+  }
+
+  #estat-credit {
+    /* 水平・垂直方向の中央揃え */
+    position: absolute;
+    width: 80%!important;
+    /* padding: 10px; */
+
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} 
+  
 }

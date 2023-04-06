@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="saveDev icon" href="{{ asset('/favicon.ico') }}">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/component/modal.css">
     <link rel="stylesheet" href="css/component/resultCard.css">
     <link rel="stylesheet" href="css/component/devCard.css">
     <link rel="stylesheet" href="css/component/button.css">
@@ -26,7 +26,9 @@
             <!-- <div id="modal-close" >閉じる</div> -->
         </div>
 
-        <h1 class="text">結果画面</h1>
+        <div id="titleImg">
+            <img src="{{ asset('/image/title.png') }}" alt="貯金偏差値" title="貯金偏差値">
+        </div>
 
         <div class="dev-div">
             <h2 class="dev-title"><span class="dev-title-span">あなたの貯金偏差値</span></h2>

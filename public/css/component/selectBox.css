@@ -89,3 +89,12 @@
 	pointer-events: none;
 	opacity: 0.5;
 }
+
+
+@media screen and (max-width: 480px) {
+	.cp_ipselect {
+		width: 53%;
+		margin-top: 50px;
+		margin-bottom: 10px;
+	}
+  }

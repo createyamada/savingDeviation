@@ -38,3 +38,16 @@
     outline: none;
     border-bottom: 1px solid rgba(0,0,0);
   }
+
+
+  @media screen and (max-width: 480px) {
+    input[type=text] {
+      width: 50%;
+      padding: 20px;
+      padding-left: 0;
+      border: 0px;
+      border-bottom: 1px solid rgba(0,0,0, 0.3);
+      font-size: 20px;
+    } 
+
+  }

@@ -1,6 +1,6 @@
 
 // ページ読み込み時に実行
-window.onload = function() {
+window.onload = function () {
 
 
     const modalBg = document.getElementById('modal-bg');
@@ -13,21 +13,21 @@ window.onload = function() {
 
     let query = location.search;
     // 先頭から2文字を削除
-    const param = query.slice( 1 ) ;
+    const param = query.slice(1);
     console.log(param);
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open('post','http://127.0.0.1:8000/api/calc');
+    xhr.open('post', 'http://127.0.0.1:8000/api/calc');
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     xhr.send(param);
 
 
-    xhr.onreadystatechange = function() {
-        if(xhr.readyState === 4 && xhr.status === 200) {
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             modalChange(false);
             console.log(JSON.parse(xhr.responseText));
-            resSet(JSON.parse(xhr.responseText) , param);
+            resSet(JSON.parse(xhr.responseText), param);
 
         }
     }
@@ -37,16 +37,16 @@ window.onload = function() {
     * @param  boolean mode
     */
     function modalChange(mode) {
-        if(mode) {
+        if (mode) {
             // 表示処理
-            $("#btn").css({ 'pointer-events': 'none' , 'opacity' : 0});
+            $("#btn").css({ 'pointer-events': 'none', 'opacity': 0 });
             container.classList.add('active');
             modalBg.classList.add('active');
         } else {
             // 非表示処理
-            $("#btn").css({ 'pointer-events': 'auto' , 'opacity' : 1});
+            $("#btn").css({ 'pointer-events': 'auto', 'opacity': 1 });
             container.classList.remove('active');
-            modalBg.classList.remove('active'); 
+            modalBg.classList.remove('active');
         }
     }
 
@@ -60,7 +60,7 @@ window.onload = function() {
     * @param  Object res
     * @param  Object param
     */
-    function resSet(res , param) {
+    function resSet(res, param) {
 
         // paramを整形
         let data = param.split('&');
@@ -70,8 +70,8 @@ window.onload = function() {
         let resultStart = document.getElementById('result-start');
 
         // 新しいHTML要素を作成
-        for (let i=0;i<res.length;i++) {
-            if(res[i].name === "偏差値") { 
+        for (let i = 0; i < res.length; i++) {
+            if (res[i].name === "偏差値") {
                 let devResult = document.getElementById('dev-result');
                 devResult.textContent = res[i].value;
                 continue;
@@ -86,16 +86,16 @@ window.onload = function() {
             let resultText = document.createElement('h2');
 
             // 要素に属性を設定
-            card.setAttribute("id", i); 
-            card.setAttribute("class" ,"card");
-            title.setAttribute("class" , "title");
-            resultDiv.setAttribute("class" , "result-div");
-            resultText.setAttribute("class" , "result-text");
+            card.setAttribute("id", i);
+            card.setAttribute("class", "card");
+            title.setAttribute("class", "title");
+            resultDiv.setAttribute("class", "result-div");
+            resultText.setAttribute("class", "result-text");
 
             // レスポンスの結果をセット
             title.textContent = res[i].name;
             resultText.textContent = "平均は：" + res[i].value + "万円";
-            
+
 
             // 作成したdivに要素を追加
             titleDiv.appendChild(title);
@@ -103,22 +103,23 @@ window.onload = function() {
             // 自身で入力したものを出力
             let youData = document.createElement('h2');
             let diff = document.createElement('h2');
-            result = dataGet(i , data);
-            switch(i) {
+            youData.setAttribute("class", "result-text");
+            result = dataGet(i, data);
+            switch (i) {
                 case 0:
                     //　金融純資産残高
-                    youData.textContent = 'あなたの純資産は、' + result　+ "万円";
+                    youData.textContent = 'あなたの純資産は、' + result + "万円";
                     resultDiv.appendChild(youData);
                     break;
 
                 case 1:
                     //　金融資産残高
-                    youData.textContent = 'あなたの資産は、' + result　+ "万円";
+                    youData.textContent = 'あなたの資産は、' + result + "万円";
                     resultDiv.appendChild(youData);
                     break;
                 case 4:
                     //　金融負債残高
-                    youData.textContent = 'あなたの負債は、' + result　+ "万円";
+                    youData.textContent = 'あなたの負債は、' + result + "万円";
                     resultDiv.appendChild(youData);
                     break;
                 default:
@@ -145,13 +146,13 @@ window.onload = function() {
         let assets = [];
         let debt = [];
         let result = '';
-        switch(mode) {
-            case 0: 
+        switch (mode) {
+            case 0:
                 assets = data[5].split('=');
                 debt = data[6].split('=');
                 result = Number(assets[1]) - Number(debt[1]);
                 break;
-            case 1: 
+            case 1:
                 assets = data[5].split('=');
                 result = assets[1];
                 break;
@@ -167,36 +168,36 @@ window.onload = function() {
 }
 
 
-    /**
-    * 入力値との差分を返す空なら空を返す
-    * @param  boolean mode
-    * @param  boolean mode
-    * @return String result
-    */
-    function dataDiff(mode, data) {
-        let assets = [];
-        let debt = [];
-        let result = '';
-        switch(mode) {
-            case 0: 
-                assets = data[5].split('=');
-                debt = data[6].split('=');
-                result = Number(assets[1]) - Number(debt[1]);
+/**
+* 入力値との差分を返す空なら空を返す
+* @param  boolean mode
+* @param  boolean mode
+* @return String result
+*/
+function dataDiff(mode, data) {
+    let assets = [];
+    let debt = [];
+    let result = '';
+    switch (mode) {
+        case 0:
+            assets = data[5].split('=');
+            debt = data[6].split('=');
+            result = Number(assets[1]) - Number(debt[1]);
 
-                break;
-            case 1: 
-                assets = data[5].split('=');
-                result = assets[1];
-                break;
-            case 4:
-                debt = data[6].split('=');
-                result = debt[1];
-                break;
-            default:
-                break;
-        }
-        return result;
+            break;
+        case 1:
+            assets = data[5].split('=');
+            result = assets[1];
+            break;
+        case 4:
+            debt = data[6].split('=');
+            result = debt[1];
+            break;
+        default:
+            break;
     }
+    return result;
+}
 
 
 /**

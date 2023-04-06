@@ -14,10 +14,6 @@
 </head>
 
 <body>
-    <!-- <div>
-        <h1 class="text">貯金平均算出システム</h1>
-        <h4 class="text">あなたの入力した情報から平均値を算出するシステムです。</h4>
-    </div> -->
 
     <div id="titleImg">
         <img src="{{ asset('/image/title.png') }}" alt="貯金偏差値" title="貯金偏差値">

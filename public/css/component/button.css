@@ -37,14 +37,54 @@ a.btn--yellow:hover {
 
 
 a.btn--yellow {
+  color: white;
+  background-color: black;
+  border-bottom: 5px solid black;
+}
+
+a.btn--yellow:hover {
+  margin-top: 3px;
+  color: white;
+  background: black;
+  border-bottom: 2px solid black;
+}
+
+@media screen and (max-width: 480px) {
+
+  .btn,
+  a.btn,
+  button.btn {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 30px 35px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+  }
+
+  a.btn--yellow {
     color: white;
     background-color: black;
     border-bottom: 5px solid black;
   }
-  
+
   a.btn--yellow:hover {
     margin-top: 3px;
     color: white;
     background: black;
     border-bottom: 2px solid black;
   }
+}
