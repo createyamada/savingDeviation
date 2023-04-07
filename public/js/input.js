@@ -140,7 +140,7 @@ function addOption() {
     }
 
 
-    location.href = 'https://saving-deviation-com.onrender.com/result?age=' + encodeURIComponent(age)
+    location.href = 'https://saving-deviation-com.onrender.com:8080/result?age=' + encodeURIComponent(age)
         + "&sex=" + encodeURIComponent(sex)
         + "&resident=" + encodeURIComponent(resident)
         + "&is_marriage=" + encodeURIComponent(is_marriage)

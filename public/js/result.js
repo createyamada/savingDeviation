@@ -18,7 +18,7 @@ window.onload = function () {
 
     const xhr = new XMLHttpRequest();
 
-    xhr.open('post', 'https://saving-deviation-com.onrender.com/api/calc');
+    xhr.open('post', 'https://saving-deviation-com.onrender.com:8080/api/calc');
     xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded;charset=UTF-8');
     xhr.send(param);
 
