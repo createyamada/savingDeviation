@@ -4,5 +4,5 @@
 * @param  null
 */
 function calc_start() {
-    window.location.href = "http://127.0.0.1:8000/input";
+    window.location.href = "https://saving-deviation-com.onrender.com:8080/input";
 }
