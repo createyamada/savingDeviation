@@ -26,3 +26,4 @@ RUN composer self-update
 RUN composer update
 RUN composer install
 RUN chown -Rf www-data:www-data ./
+RUN php artisan serve
