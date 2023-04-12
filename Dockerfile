@@ -4,28 +4,28 @@
 # RUN cd /app && npm ci && npm run prod
 
 
-FROM php:8.1.5-apache
+# FROM php:8.1.5-apache
 
-RUN apt-get update && apt-get install -y \
-  zip \
-  unzip \
-  git
+# RUN apt-get update && apt-get install -y \
+#   zip \
+#   unzip \
+#   git
 
-RUN docker-php-ext-install -j "$(nproc)" opcache && docker-php-ext-enable opcache
+# RUN docker-php-ext-install -j "$(nproc)" opcache && docker-php-ext-enable opcache
 
-RUN sed -i 's/80/8080/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
-RUN sed -i 's#/var/www/html#/var/www/html/public#g' /etc/apache2/sites-available/000-default.conf
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+# RUN sed -i 's/80/8080/g' /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf
+# RUN sed -i 's#/var/www/html#/var/www/html/public#g' /etc/apache2/sites-available/000-default.conf
+# RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 
-COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
+# COPY --from=composer:2.0 /usr/bin/composer /usr/bin/composer
 
-WORKDIR /var/www/html
-COPY . ./
-COPY --from=node-builder /app/public ./public
-RUN composer self-update
-RUN composer update
-RUN composer install
-RUN chown -Rf www-data:www-data ./
+# WORKDIR /var/www/html
+# COPY . ./
+# COPY --from=node-builder /app/public ./public
+# RUN composer self-update
+# RUN composer update
+# RUN composer install
+# RUN chown -Rf www-data:www-data ./
 # RUN php artisan serve
 
 FROM richarvey/nginx-php-fpm:1.7.2
