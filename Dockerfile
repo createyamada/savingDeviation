@@ -16,7 +16,7 @@ COPY . /app
 RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader
 
 # ポートを公開
-EXPOSE 8000
+EXPOSE 80
 
 # エントリーポイントを指定
-ENTRYPOINT ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
+ENTRYPOINT ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]
