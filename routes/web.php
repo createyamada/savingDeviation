@@ -25,5 +25,4 @@ Route::get('/result', function () {
     return view('result');
 });
 
-
 Route::post('/calc', [RequestController::class, 'calc']);
