@@ -19,4 +19,4 @@ RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoload
 EXPOSE 8000
 
 # エントリーポイントを指定
-ENTRYPOINT ["php", "artisan", "serve", "--host=0.0.0.0", "--port=80"]
+ENTRYPOINT ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
