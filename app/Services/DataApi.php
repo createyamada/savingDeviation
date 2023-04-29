@@ -54,9 +54,9 @@ class DataApi
 
 
         $labels = $array["GET_STATS_DATA"]["STATISTICAL_DATA"]["CLASS_INF"]["CLASS_OBJ"][4]["CLASS"];
-        Log::error($labels);
-        $datas = $array["GET_STATS_DATA"]["STATISTICAL_DATA"]["DATA_INF"]["VALUE"];
         Log::error($array["GET_STATS_DATA"]["STATISTICAL_DATA"]);
+
+        $datas = $array["GET_STATS_DATA"]["STATISTICAL_DATA"]["DATA_INF"]["VALUE"];
 
         $result = [];
         // ラベルとデータを紐づけた配列を作る
