@@ -27,7 +27,7 @@ class DataApi
         // Log::debug($age_code);
         // 統計データ取得パラメータ
         $params = array(
-            'appId'             => env('E_STAT_APP_KEY'),
+            'appId'             => Consts::E_STAT_APP_KEY,
             'statsDataId'       => $list_code,
             'cdCat01'           => $input->is_marriage,
             'cdCat02'           => "0",

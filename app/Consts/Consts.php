@@ -28,4 +28,10 @@ class Consts
     const SEVENTIES = 2402.074806139708;
 
     
+    # 統計表データ取得URL
+    const E_STAT_TABLE_DATA_URL="http://api.e-stat.go.jp/rest/3.0/app/json/getStatsList?";
+    # 統計データ取得URL
+    const E_STAT_DATA_URL="http://api.e-stat.go.jp/rest/3.0/app/json/getStatsData?";
+    # アプリケーションキー
+    const E_STAT_APP_KEY="c2a6b54812055fac2c46df210b860879a375f623";
 }
