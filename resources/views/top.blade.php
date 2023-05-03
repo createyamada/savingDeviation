@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,11 @@
     <link rel="saveDev icon" href="{{ asset('/favicon.ico') }}">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/component/button.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6327142963568803"
-    crossorigin="anonymous"></script>
-    <title>貯金平均算出システム</title> 
+        crossorigin="anonymous"></script>
+    <title>貯金平均算出システム</title>
 
 </head>
 
@@ -24,8 +26,18 @@
         <a href="javascript:calc_start();" class="btn btn--yellow btn--cubic">入力画面へ</a>
     </div>
 
-    <h5 id="estat-credit" class="text">このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。</h5> 
+    <h5 id="estat-credit" class="text">このサービスは、政府統計総合窓口(e-Stat)のAPI機能を使用していますが、サービスの内容は国によって保証されたものではありません。</h5>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6327142963568803"
+        crossorigin="anonymous"></script>
+    <!-- adsense -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6327142963568803" data-ad-slot="4249480351"
+        data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 
     <script src="js/top.js"></script>
 </body>
+
 </html>
