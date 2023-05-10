@@ -58,18 +58,6 @@
 
     </div>
 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6327142963568803"
-     crossorigin="anonymous"></script>
-<!-- adsense -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6327142963568803"
-     data-ad-slot="4249480351"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
 
     <script src="js/result.js"></script>
 </body>
