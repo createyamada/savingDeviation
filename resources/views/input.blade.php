@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="css/component/selectBox.css">
     <link rel="stylesheet" href="css/component/button.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6327142963568803"
-     crossorigin="anonymous"></script>
-
+    
     <title>貯金平均算出システム</title>
 </head>
 
