@@ -1,4 +1,3 @@
-
 // ページ読み込み時に実行
 window.onload = function () {
 
@@ -208,5 +207,3 @@ function back() {
     console.log("戻るボタン押下")
     history.back();
 }
-
-

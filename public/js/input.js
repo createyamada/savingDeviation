@@ -150,4 +150,3 @@ function addOption() {
         + "&debt=" + encodeURIComponent(debt);
 
 }
-
